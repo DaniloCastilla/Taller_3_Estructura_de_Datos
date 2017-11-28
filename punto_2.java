@@ -1,5 +1,7 @@
 import java.io.*;
-
+/*
+*@author Danicas99
+*/
 public class Punto_2 {
 
 	public static void cargarVector(int array[][], int minRandom, int maxRandom) {
@@ -83,7 +85,7 @@ public class Punto_2 {
 		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
 		
-		bw.write("Escriba el tamaño de la Matriz \n");
+		bw.write("Escriba el tamaÃ±o de la Matriz \n");
 		bw.flush();
 		
 		int m = Integer.parseInt(br.readLine());
