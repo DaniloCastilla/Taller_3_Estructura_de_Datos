@@ -1,44 +1,31 @@
+/**
+ * @author Danicas99
+ * @date 28/11/2017
+ * @version 1.0
+ */
+
 import java.io.*;
-/*
-*@author Danicas99
-*/
+
 public class Punto_2 {
 
-	public static void cargarVector(int array[][], int minRandom, int maxRandom) {
+	public static void cargarVector(int array[][], int minRandom, int maxRandom) { //Method that loads an array with random numbers
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 array[i][j] = minRandom - ((int) Math.round((Math.random()) * (minRandom - maxRandom)));
             }
         }
-    }
+    }//end method
 	
-	public static void imprimeVector(int array[][]){
+	public static void imprimeVector(int array[][]){ //Method that prints an array
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print("[" + array[i][j] + "]");
             }
             System.out.println("");
         }
-    }
+    }//end method
 	
-	public static void imprimeArray(int array[]){
-        for (int i = 0; i < array.length; i++) {
-            System.out.print("[" + array[i] + "]");
-        }
-    }
-	
-	public static void cargarArray (int array[]) throws NumberFormatException, IOException
-	{
-		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-		int n;
-		for (int i = 0; i < array.length; i++) {
-			n = Integer.parseInt(br.readLine());
-			array[i] = n;
-			
-		}
-	}
-	
-	public static void ArrayDiagonal(int Array[][]){
+	public static void ArrayDiagonal(int Array[][]){ //Method that prints the array in the form of a spiral
 		
 		int m = Array.length;
 		int inicio = 0;
@@ -77,10 +64,10 @@ public class Punto_2 {
 		limite -=1;
 		
 		}
-			}
+			}//end method
 
 	
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws NumberFormatException, IOException {//main class
 		
 		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
@@ -90,11 +77,6 @@ public class Punto_2 {
 		
 		int m = Integer.parseInt(br.readLine());
 		
-		/*int vector[] = new int [m];
-		cargarArray(vector);
-		imprimeArray(vector);*/
-		
-		
 		int Vector [][] = new int [m][m];
 		cargarVector(Vector, (0), (9));
 		imprimeVector(Vector);
@@ -103,5 +85,4 @@ public class Punto_2 {
 		
 	}
 	
-}
-
+}//end main class
