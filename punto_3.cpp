@@ -14,26 +14,25 @@
 
 using namespace std;
 
-string NumberToString(int pNumber)
+string NumberToString(int pNumber) //Convert numbers to string to be able to print
 {
  ostringstream oOStrStream;
  oOStrStream << pNumber;
  return oOStrStream.str();
-}
+}//end convertion
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]){ //Main method
 int m = 0 ;
 int npar = 0 ;
 int nimpar = 0;
 int npos = 0;
 int nneg = 0 ;
 
-string cpar, cimpar, cpos, cneg, x;
-cout << "ingrese las dimenciones de la Matriz: ";
-cin >> m ;
-int matriz [m][m];
-cout <<"los numeros aleatorios son: \n\n";
-
+	string cpar, cimpar, cpos, cneg, x;
+	cout << "ingrese las dimenciones de la Matriz: " + "\n";
+	cin >> m ;
+	int matriz [m][m];
+	cout <<"los numeros aleatorios son: \n\n";
 
 	for (int i= 0 ;i<m ;i++){
 		for (int j= 0 ;j<m ;j++){
@@ -49,9 +48,7 @@ cout <<"los numeros aleatorios son: \n\n";
 		cout << x + "\n";
 	}
 
-
-
-	for(int i = 0;i<m;i++){
+	for(int i = 0;i<m;i++){ //Cycle for to find the requirements
 		for(int j = 0; j<m;j++){
 			if(matriz[i][j]%2 == 0){
 				npar++;
@@ -80,5 +77,4 @@ cout <<"los numeros aleatorios son: \n\n";
 	cout <<"los numeros negativos encontrados son:" + cneg + "\n\n";
 	cout <<"los numeros positivos encontrados son:" + cpos + "\n\n";
 
-}
-
+}//end Main
