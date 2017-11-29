@@ -1,26 +1,15 @@
+/**
+ * @author Danicas99
+ * @date 28/11/2017
+ * @version 1.0
+ */
+
 import java.io.*;
 
 public class Punto_5 {
 		
-		public static void cargarVector(int array[][], int minRandom, int maxRandom) {
-	        for (int i = 0; i < array.length; i++) {
-	            for (int j = 0; j < array[i].length; j++) {
-	                array[i][j] = minRandom - ((int) Math.round((Math.random()) * (minRandom - maxRandom)));
-	            }
-	        }
-	    }
-		
-		public static void imprimeVector(String array[][]){
-	        for (int i = 0; i < array.length; i++) {
-	            for (int j = 0; j < array[i].length; j++) {
-	                System.out.print("[" + array[i][j] + "]");
-	            }
-	            System.out.println("");
-	        }
-	    }
-		
 		public static void recorrerVectorRombo(String Array[][] , int n)
-		{
+		{//Method that crosses the array and prints the external values of the Rhombus
 			if(n%2==0)
 			{
 				for (int i = 0; i < n; i++) {
@@ -60,10 +49,11 @@ public class Punto_5 {
 
 			}
 
-		}
+		}//end method
 		
 		public static void NumberManual(String Matriz[][] , String Vector[] )
-		{
+		{//Method that assigns the numbers entered by console to the array
+			
 			int c = 0 ;	
 			
 		do{
@@ -82,16 +72,15 @@ public class Punto_5 {
 			}
 		
 		}while(c<Vector.length);	
-		
-			//System.out.println(Matriz[1][1]);
-	}
+	}//end method
 
-		public static void main(String[] args) throws NumberFormatException, IOException{
+		public static void main(String[] args) throws NumberFormatException, IOException
+		{//class main
 			
 			BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
 			
-			bw.write("Escriba el tamaño de la Matriz \n");
+			bw.write("Escriba el tamaÃ±o de la Matriz \n");
 			bw.flush();
 			int m = Integer.parseInt(br.readLine());
 			
@@ -106,8 +95,6 @@ public class Punto_5 {
 
 			System.out.println("");
 			
-			System.out.println("");
-			
 			NumberManual(Vector, Array_2);
 			
 			System.out.println("");
@@ -115,5 +102,4 @@ public class Punto_5 {
 			recorrerVectorRombo(Vector , m);
 			
 		}
-	}
-
+	}//end class
