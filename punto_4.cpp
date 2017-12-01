@@ -1,62 +1,89 @@
-/*
- * Punto4.cpp
- *
- *  Created on: 26 nov. 2017
- *      Author: Danicas99
- */
+//============================================================================
+// Name        : Punto_4.cpp
+// Author      : Danicas
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
 
-#include "Punto4.h"
-
-#include<iostream>
+#include <vector>
 #include <string>
 #include <sstream>
+#include <iostream>
+#include <conio.h>
 
-using namespace std;
+ using namespace std;
 
-string NumberToString(int pNumber)
-{
- ostringstream oOStrStream;
- oOStrStream << pNumber;
- return oOStrStream.str();
-}
+ int main(){//Main method
 
-int main (int argc, char* argv[]){
+	 	int x;
+	  	string Cadena;
+	    vector<int> v;
+	    cout <<"ingrese el tamaño de la matriz: " << endl;
+	    cin >> x;
+	    int Vector[x*x];
+	    int Vector_2[100][100];
+	    int tamain = (sizeof Vector/sizeof * Vector);
+	    cout << "Digite la cadena de caracteres separado por comas: \n";
+	    cin >> Cadena;
 
-int m = 0 ;
-cout << "ingrese las dimenciones de la Matriz: ";
-cin >> m ;
-int matriz [m][m];
-int matrizB [m][m];
+	    stringstream Separated(Cadena);
 
-	for (int i=0;i<m;i++){
-		for(int j=0;j<m;j++){
-		cout << "ingrese el dato: ";
-		cin >> matriz[i][j];
+	    int i;
+
+	    while (Separated >> i){
+	         	 v.push_back(i);
+	         if (Separated.peek() == ',')//Separated with Comas
+	        	 Separated.ignore();
+	    }//end While
+
+	    int Tm = v.size();
+
+	    for (i=0; i< Tm; i++){
+
+	     	Vector[i] = v.at(i);
+
+	    }
+
+	    cout<<endl;
+	    int c = 0;
+	    do{
+	    for (int i = 0; i < x; i++){
+
+			for (int j = 0; j < x ; j++) {
+
+				Vector_2[i][j] = Vector[c];
+				c++;
+			}
+
 		}
-	}
-	string x;
-	for (int i=0;i<m ;i++){
-		x = "";
-		for (int j= 0 ;j<m ;j++){
-			x = x + "[" + NumberToString(matriz[i][j])+ "]";
-		}
-		cout << x + "\n";
-	}
 
-	for (int i=0;i<m;i++){
-		for(int j=0;j<m;j++){
-		matrizB [j][i]=matriz[j][i];
-		}
-	}
+	  }while(c<tamain);
 
-	cout << "\n\nEspejo: \n\n";
+	    for (int k = 0; k < x; k++) {
+	    	for (int j = 0; j < x; j++) {
+	    		cout << "["<<Vector_2[k][j]<<"]";
 
-	for (int i=0;i<m ;i++){
-		x = "";
-		for (int j= 0 ;j<m ;j++){
-			x = x + "[" + NumberToString(matrizB[j][i])+ "]";
-		}
-		cout << x + "\n";
-	}
-}
+	    			}
 
+	    	cout<<endl;
+
+	    	}
+
+	    cout << endl;
+	    cout << "Matriz Transpuesta"<<endl;
+
+	    for (int k = 0; k < x; k++) {
+	    	 for (int j = 0; j < x; j++) {
+	    	    cout << "["<<Vector_2[j][k]<<"]";
+
+	    	   }
+
+	    	   cout<<endl;
+
+	    	}
+
+	    getch();
+	    return 0;
+
+ }
